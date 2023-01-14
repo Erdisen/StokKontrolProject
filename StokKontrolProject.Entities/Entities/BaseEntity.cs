@@ -13,7 +13,7 @@ namespace StokKontrolProject.Entities.Entities
         [Column(Order =1)] // Bütün entitylerde bu kolon 1. sırada olacak şekilde ayarlandı.
         public int ID { get; set; }
         public bool IsActive { get; set; }
-        public DateTime AddedDate { get; set; } = DateTime.Now;
+        public DateTime AddedDate { get; set; } /*= DateTime.Now;*/
         public DateTime? ModifiedDate { get; set; }
     }
 

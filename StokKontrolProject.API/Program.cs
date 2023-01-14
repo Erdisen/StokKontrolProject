@@ -1,3 +1,11 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using StokKontrolProject.Repositories.Abstract;
+using StokKontrolProject.Repositories.Concrete;
+using StokKontrolProject.Repositories.Context;
+using StokKontrolProject.Service.Abstract;
+using StokKontrolProject.Service.Concrete;
+
 namespace StokKontrolProject.API
 {
     public class Program
@@ -9,9 +17,20 @@ namespace StokKontrolProject.API
             // Add services to the container.
 
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+           
+
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddDbContext<StokKontrolContext>(option =>
+            {
+                option.UseSqlServer("Server=DESKTOP-JH0OB08; Database=StokKontrolDB; uid = sa; pwd=1;");
+            });
+
+
+            builder.Services.AddTransient(typeof(IGenericService<>), typeof(GenericManager<>));
+            builder.Services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+
 
             var app = builder.Build();
 

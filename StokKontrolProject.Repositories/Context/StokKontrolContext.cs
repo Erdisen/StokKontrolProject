@@ -10,10 +10,10 @@ namespace StokKontrolProject.Repositories.Context
 {
     public class StokKontrolContext : DbContext
     {
-        //public StokKontrolContext(DbContextOptions<StokKontrolContext> options) : base(options)
-        //{
+        public StokKontrolContext(DbContextOptions<StokKontrolContext> options) : base(options)
+        {
 
-        //}
+        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
