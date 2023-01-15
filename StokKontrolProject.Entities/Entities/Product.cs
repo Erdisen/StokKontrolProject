@@ -24,12 +24,12 @@ namespace StokKontrolProject.Entities.Entities
 
         [ForeignKey("Kategori")]
         public int CategoryID { get; set; }
-        public virtual Category Kategori { get; set; }
+        public virtual Category? Kategori { get; set; }
 
 
         [ForeignKey("Tedarikci")]
         public int SupplierID { get; set; }
-        public virtual Supplier Tedarikci { get; set; }
+        public virtual Supplier? Tedarikci { get; set; }
 
         public List<OrderDetails> SiparisDetaylari { get; set; }
     }

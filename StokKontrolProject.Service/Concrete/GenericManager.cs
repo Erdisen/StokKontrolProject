@@ -70,7 +70,7 @@ namespace StokKontrolProject.Service.Concrete
 
         public T GetByDefault(Expression<Func<T, bool>> exp)
         {
-            return GetByDefault(exp);
+            return _repository.GetByDefault(exp);
         }
 
         public T GetByID(int id)

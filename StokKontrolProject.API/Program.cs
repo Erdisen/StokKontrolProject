@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Newtonsoft.Json;
 using StokKontrolProject.Repositories.Abstract;
 using StokKontrolProject.Repositories.Concrete;
 using StokKontrolProject.Repositories.Context;
@@ -16,7 +17,7 @@ namespace StokKontrolProject.API
 
             // Add services to the container.
 
-            builder.Services.AddControllers();
+            builder.Services.AddControllers().AddNewtonsoftJson(option=> option.SerializerSettings.ReferenceLoopHandling=ReferenceLoopHandling.Ignore);
            
 
             builder.Services.AddEndpointsApiExplorer();

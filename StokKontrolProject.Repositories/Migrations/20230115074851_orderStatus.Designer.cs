@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using StokKontrolProject.Repositories.Context;
 
@@ -11,9 +12,10 @@ using StokKontrolProject.Repositories.Context;
 namespace StokKontrolProject.Repositories.Migrations
 {
     [DbContext(typeof(StokKontrolContext))]
-    partial class StokKontrolContextModelSnapshot : ModelSnapshot
+    [Migration("20230115074851_orderStatus")]
+    partial class orderStatus
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

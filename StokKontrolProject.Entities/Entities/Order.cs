@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StokKontrolProject.Entities.Enum;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -17,8 +18,10 @@ namespace StokKontrolProject.Entities.Entities
         public int UserID { get; set; }
 
 
+        public Status Status { get; set; } // DB güncellenmedi
+
         //Navigation Properties
-        public virtual User Kullanici { get; set; }
+        public virtual User? Kullanici { get; set; }
         public virtual List<OrderDetails> SiparisDetaylari { get; set; }
     }
 }

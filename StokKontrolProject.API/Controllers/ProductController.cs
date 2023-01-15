@@ -8,61 +8,72 @@ namespace StokKontrolProject.API.Controllers
 {
     [Route("api/[controller]/[action]")]
     [ApiController]
-    public class SupplierController : ControllerBase
+    public class ProductController : ControllerBase
     {
-        private readonly IGenericService<Supplier> _service;
+        private readonly IGenericService<Product> _service;
 
-        public SupplierController(IGenericService<Supplier> service)
+        public ProductController(IGenericService<Product> service)
         {
             _service = service;
         }
 
-        // GET: api/Supplier/TumTedarikcileriGetir
+        // GET: api/Product/TumUrunleriGetir
         [HttpGet]
-        public IActionResult TumTedarikcileriGetir()
+        public IActionResult TumUrunleriGetir()
         {
             return Ok(_service.GetAll());
         }
 
-        // GET: api/Supplier/AktifTedarikcileriGetir/5
+        // GET: api/Product/AktifUrunleriGetir/5
         [HttpGet]
-        public IActionResult AktifTedarikcileriGetir()
+        public IActionResult AktifUrunleriGetir()
         {
             return Ok(_service.GetActive());
         }
 
         [HttpGet("{id}")]
-        public IActionResult IdyeTedarikcileriGetir(int id)
+        public IActionResult IdyeGoreUrunGetir(int id)
         {
             return Ok(_service.GetByID(id));
         }
-        // POST: api/Supplier/TedarikcileriEkle
+        // POST: api/Product/UrunEkle
         [HttpPost]
-        public IActionResult TedarikcileriEkle(Supplier supplier)
+        public IActionResult UrunEkle(Product Product)
         {
-            _service.Add(supplier);
+            _service.Add(Product);
 
-            return CreatedAtAction("IdyeTedarikcileriGetir", new { id = supplier.ID }, supplier);
+            return CreatedAtAction("IdyeGoreUrunGetir", new { id = Product.ID }, Product);
+
+//            {
+//                "isActive": true,
+//  "productName": "Coca Cola 1 LT",
+//  "unitPrice": 17.50,
+//  "stock": 1000,
+//  "expireDate": "2024-01-14T11:59:32.479Z",
+//  "categoryID": 4,
+//  "supplierID": 1
+//}
         }
 
-        // PUT: api/Supplier/TedarikcileriGuncelle/5
+        // PUT: api/Product/UrunleriGuncelle/5
         [HttpPut("{id}")]
-        public IActionResult TedarikcileriGuncelle(int id, Supplier supplier)
+        public IActionResult UrunleriGuncelle(int id, Product Product)
         {
-            if (id != supplier.ID)
+            if (id != Product.ID)
             {
                 return BadRequest();
             }
 
+            //_service.Entry(Product).State = EntityState.Modified;
 
             try
             {
-                _service.Update(supplier);
-                return Ok(supplier);
+                _service.Update(Product);
+                return Ok(Product);
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!SupplierExists(id))
+                if (!ProductExists(id))
                 {
                     return NotFound();
                 }
@@ -74,19 +85,19 @@ namespace StokKontrolProject.API.Controllers
 
 
 
-        // DELETE: api/Supplier/TedarikciSil/5
+        // DELETE: api/Product/UrunSil/5
         [HttpDelete("{id}")]
-        public IActionResult TedarikciSil(int id)
+        public IActionResult UrunSil(int id)
         {
-            var supplier = _service.GetByID(id);
-            if (supplier == null)
+            var Product = _service.GetByID(id);
+            if (Product == null)
             {
                 return NotFound();
             }
             try
             {
-                _service.Remove(supplier);
-                return Ok("Tedarikçi Silindi!");
+                _service.Remove(Product);
+                return Ok("Urun Silindi!");
             }
             catch (Exception)
             {
@@ -96,17 +107,17 @@ namespace StokKontrolProject.API.Controllers
 
         }
 
-        private bool SupplierExists(int id)
+        private bool ProductExists(int id)
         {
             return _service.Any(e => e.ID == id);
         }
 
 
         [HttpGet("{id}")]
-        public IActionResult TedarikciAktiflestir(int id)
+        public IActionResult UrunAktiflestir(int id)
         {
-            var supplier = _service.GetByID(id);
-            if (supplier == null)
+            var Product = _service.GetByID(id);
+            if (Product == null)
             {
                 return NotFound();
             }
