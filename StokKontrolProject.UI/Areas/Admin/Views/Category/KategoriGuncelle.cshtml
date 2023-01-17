@@ -1,6 +1,8 @@
-﻿@{
-    ViewData["Title"] = "KategoriEkle";
+﻿
+@{
+    ViewData["Title"] = "KategoriGuncelle";
 }
+
 @model Category
 <div class="row">
     <div class="offset-3 col-lg-6">
@@ -12,24 +14,24 @@
                 <!-- Credit Card -->
                 <div id="pay-invoice">
                     <div class="card-body">
-                        
-                        <form asp-area="Admin" asp-controller="Category" asp-action="KategoriEkle" method="post" novalidate="novalidate">
-                           
-                            <div class="form-group"> 
+
+                        <form asp-area="Admin" asp-controller="Category" asp-action="KategoriGuncelle" method="post" novalidate="novalidate">
+
+                            <div class="form-group">
                                 <label asp-for="CategoryName" class="control-label mb-1">Kategori Adı</label>
-                                <input  asp-for="CategoryName"  type="text" class="form-control" >
+                                <input asp-for="CategoryName" type="text" class="form-control">
                             </div>
                             <div class="form-group has-success">
                                 <label asp-for="Description" class="control-label mb-1">Kategori Açıklaması</label>
-                                <input asp-for="Description" type="text"  class="form-control" >
-                              
+                                <input asp-for="Description" type="text" class="form-control">
+
                             </div>
-                            
-                            
+
+
                             <div>
                                 <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
                                     <i class="fa fa-plus-square-o fa-lg"></i>&nbsp;
-                                    <span id="payment-button-amount">Kategori Ekle</span>
+                                    <span id="payment-button-amount">Kategori Güncelle</span>
                                     <span id="payment-button-sending" style="display:none;">Ekleniyor…</span>
                                 </button>
                             </div>
@@ -38,7 +40,7 @@
                 </div>
 
             </div>
-        </div> <!-- .card -->
+        </div> 
 
     </div>
 

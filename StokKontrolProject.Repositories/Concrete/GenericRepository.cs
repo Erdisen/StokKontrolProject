@@ -163,6 +163,7 @@ namespace StokKontrolProject.Repositories.Concrete
         {
             try
             {
+                item.IsActive = true;
                 item.ModifiedDate = DateTime.Now;
                 _context.Set<T>().Update(item);
                 return Save() > 0;
