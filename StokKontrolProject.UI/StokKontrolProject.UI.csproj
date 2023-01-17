@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\StokKontrolProject.Entities\StokKontrolProject.Entities.csproj" />
     <ProjectReference Include="..\StokKontrolProject.Repositories\StokKontrolProject.Repositories.csproj" />
   </ItemGroup>
 
