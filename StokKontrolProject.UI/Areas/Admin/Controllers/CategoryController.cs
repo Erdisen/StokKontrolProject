@@ -54,6 +54,8 @@ namespace StokKontrolProject.UI.Areas.Admin.Controllers
             //return View(kategoriler);
             return RedirectToAction("Index");
         }
+      
+
         [HttpGet]
         public IActionResult KategoriEkle()
         {
@@ -99,7 +101,8 @@ namespace StokKontrolProject.UI.Areas.Admin.Controllers
             {
 
                 guncelKategori.AddedDate = updateCategory.AddedDate;
-                //guncelKategori.AddedDate = eklenmeTarihi;
+                guncelKategori.IsActive = true;
+
                 StringContent content = new StringContent(JsonConvert.SerializeObject(guncelKategori), Encoding.UTF8, "application/json");
 
                 using (var cevap = await httpClient.PutAsync($"{uri}/api/Category/KategoriGuncelle/{guncelKategori.ID}", content))

@@ -21,14 +21,14 @@ namespace StokKontrolProject.API.Controllers
         [HttpGet]
         public IActionResult TumUrunleriGetir()
         {
-            return Ok(_service.GetAll());
+            return Ok(_service.GetAll(t0=>t0.Kategori,t1=>t1.Tedarikci));
         }
 
         // GET: api/Product/AktifUrunleriGetir/5
         [HttpGet]
         public IActionResult AktifUrunleriGetir()
         {
-            return Ok(_service.GetActive());
+            return Ok(_service.GetActive(t0 => t0.Kategori, t1 => t1.Tedarikci));
         }
 
         [HttpGet("{id}")]

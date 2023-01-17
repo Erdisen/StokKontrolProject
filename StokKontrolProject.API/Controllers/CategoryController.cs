@@ -103,6 +103,7 @@ namespace StokKontrolProject.API.Controllers
 
         }
 
+      
         private bool CategoryExists(int id)
         {
             return _service.Any(e => e.ID == id);
