@@ -21,7 +21,7 @@ namespace StokKontrolProject.Entities.Entities
         public string? Phone { get; set; }
         public string? Address { get; set; }
         public string Password { get; set; }
-        public Role  Role { get; set; }
+        public UserRole  Role { get; set; }
 
         //Navigation Property
         public virtual List<Order> Siparisler { get; set; }

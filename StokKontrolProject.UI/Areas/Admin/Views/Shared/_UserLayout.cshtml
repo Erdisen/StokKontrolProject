@@ -25,11 +25,11 @@
     <link rel="stylesheet" href="~/template/assets/css/style.css">
     <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script> -->
     <link href="https://cdn.jsdelivr.net/npm/chartist@0.11.0/dist/chartist.min.css" rel="stylesheet">
- 
+
 
     <link href="https://cdn.jsdelivr.net/npm/weathericons@2.1.0/css/weather-icons.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.css" rel="stylesheet" />
-     @RenderSection("Css",required:false)
+    @RenderSection("Css",required:false)
     <style>
         #weatherWidget .currentDesc {
             color: #ffffff !important;
@@ -72,7 +72,6 @@
             height: 160px;
         }
 
-       
     </style>
 </head>
 
@@ -86,38 +85,43 @@
                         <a asp-controller="Home" asp-action="Index"><i class="menu-icon fa fa-laptop"></i>Anasayfa </a>
                     </li>
                     <li class="menu-title">Operasyonlar</li><!-- /.menu-title -->
-                    <li class="menu-item-has-children dropdown"><!--Kullanıcılar-->
+                    <li class="menu-item-has-children dropdown">
+                        <!--Kullanıcılar-->
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Kullanıcılar</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-puzzle-piece"></i><a asp-controller="User" asp-action="Index">Kullanıcıları Listele</a></li>
                             <li><i class="fa fa-id-badge"></i><a asp-controller="User" asp-action="KullaniciEkle">Kullanıcı Ekle</a></li>
                         </ul>
                     </li>
-                    <li class="menu-item-has-children dropdown"><!--Ürünler-->
+                    <li class="menu-item-has-children dropdown">
+                        <!--Ürünler-->
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Ürünler</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-puzzle-piece"></i><a asp-controller="Product" asp-action="Index">Ürünleri Listele</a></li>
                             <li><i class="fa fa-id-badge"></i><a asp-controller="Product" asp-action="UrunEkle">Ürün Ekle</a></li>
                         </ul>
                     </li>
-                    <li class="menu-item-has-children dropdown"><!--Kategoriler-->
+                    <li class="menu-item-has-children dropdown">
+                        <!--Kategoriler-->
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Kategoriler</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-puzzle-piece"></i><a asp-controller="Category" asp-action="Index">Kategori Listele</a></li>
                             <li><i class="fa fa-id-badge"></i><a asp-controller="Category" asp-action="KategoriEkle">Kategori Ekle</a></li>
                         </ul>
                     </li>
-                    <li class="menu-item-has-children dropdown"><!--Siparişler-->
-                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Siparişler</a>
-                          <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a asp-controller="Order" asp-action="SiparisListele" >Sipariş Listele</a></li>
-                            <li><i class="fa fa-id-badge"></i><a asp-controller="Order" asp-action="SiparisEkle">Sipariş Ekle</a></li>
+                    <li class="menu-item-has-children dropdown">
+                        <!--Siparişler-->
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Siparişler</a>
+                        <ul class="sub-menu children dropdown-menu">
+                            <li><i class="fa fa-puzzle-piece"></i><a asp-controller="Order" asp-action="Index">Sipariş Listele</a></li>
+                            
                         </ul>
                     </li>
-                    <li class="menu-item-has-children dropdown"><!--Tedarikçiler-->
-                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Tedarikçiler</a>
+                    <li class="menu-item-has-children dropdown">
+                        <!--Tedarikçiler-->
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Tedarikçiler</a>
                         <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a asp-controller="Supplier" asp-action="TedarikciListele">Tedarikçi Listele</a></li>
+                            <li><i class="fa fa-puzzle-piece"></i><a asp-controller="Supplier" asp-action="Index">Tedarikçi Listele</a></li>
                             <li><i class="fa fa-id-badge"></i><a asp-controller="Supplier" asp-action="TedarikciEkle">Tedarikçi Ekle</a></li>
                         </ul>
                     </li>
@@ -279,7 +283,7 @@
     <script src="https://cdn.jsdelivr.net/npm/flot-pie@1.0.0/src/jquery.flot.pie.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flot-spline@0.0.1/js/jquery.flot.spline.min.js"></script>
 
- 
+
 
     <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/fullcalendar@3.9.0/dist/fullcalendar.min.js"></script>
@@ -287,6 +291,6 @@
 
     @RenderSection("Scripts",required:false)
 
-   
+
 </body>
 </html>

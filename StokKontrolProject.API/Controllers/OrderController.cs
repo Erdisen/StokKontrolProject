@@ -27,7 +27,7 @@ namespace StokKontrolProject.API.Controllers
         [HttpGet]
         public IActionResult TumSiparisleriGetir()
         {
-            return Ok(_orderService.GetAll());
+            return Ok(_orderService.GetAll(t0 => t0.SiparisDetaylari, t1 => t1.Kullanici));
         }
 
         // GET: api/Order/AktifSiparisleriGetir/5
@@ -40,7 +40,7 @@ namespace StokKontrolProject.API.Controllers
         [HttpGet("{id}")]
         public IActionResult IdyeGoreSiparisGetir(int id)
         {
-            return Ok(_orderService.GetByID(id));
+            return Ok(_orderService.GetByID(id,t0=>t0.SiparisDetaylari,t1=>t1.Kullanici));
         }
         // GET: api/Order/TumSiparisleriGetir
         [HttpGet]

@@ -17,6 +17,7 @@ namespace StokKontrolProject.Repositories.Abstract
         bool Remove(int id);
         bool RemoveAll(Expression<Func<T, bool>> exp);
         T GetByID(int id);
+        IQueryable<T> GetByID(int id,params Expression<Func<T, object>>[] includes);
         T GetByDefault(Expression<Func<T, bool>> exp);
         List<T> GetActive();
         IQueryable<T> GetActive(params Expression<Func<T, object>>[] includes);

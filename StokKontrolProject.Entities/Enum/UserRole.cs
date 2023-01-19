@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace StokKontrolProject.Entities.Enum
 {
-    public enum Role
+    public enum UserRole
     {
         Admin = 1,
         Supplier = 3,

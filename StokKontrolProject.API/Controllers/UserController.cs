@@ -49,7 +49,7 @@ namespace StokKontrolProject.API.Controllers
 
         // PUT: api/User/KullanicilariGuncelle/5
         [HttpPut("{id}")]
-        public IActionResult KullanicilariGuncelle(int id, User user)
+        public IActionResult KullaniciGuncelle(int id, User user)
         {
             if (id != user.ID)
             {

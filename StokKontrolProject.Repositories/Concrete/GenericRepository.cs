@@ -97,7 +97,15 @@ namespace StokKontrolProject.Repositories.Concrete
 
         public T GetByID(int id) => _context.Set<T>().Find(id);
 
-
+        public IQueryable<T> GetByID(int id,params Expression<Func<T, object>>[] includes)
+        {
+            var query = _context.Set<T>().Where(x => x.ID == id);
+            if (includes != null)
+            {
+                query = includes.Aggregate(query, (current, include) => current.Include(include));
+            }
+            return query;
+        }
         public List<T> GetDefault(Expression<Func<T, bool>> exp) => _context.Set<T>().Where(exp).ToList();
 
 

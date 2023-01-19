@@ -1,9 +1,8 @@
 ﻿
 @{
-    ViewData["Title"] = "KategoriGuncelle";
+    ViewData["Title"] = "UrunGuncelle";
 }
-
-@model Category
+@model Product
 <div class="row">
     <div class="offset-3 col-lg-6">
         <div class="card">
@@ -15,15 +14,40 @@
                 <div id="pay-invoice">
                     <div class="card-body">
 
-                        <form asp-area="Admin" asp-controller="Category" asp-action="KategoriGuncelle" method="post" novalidate="novalidate">
+                        <form asp-area="Admin" asp-controller="Product" asp-action="UrunGuncelle" method="post" novalidate="novalidate">
 
                             <div class="form-group">
-                                <label asp-for="CategoryName" class="control-label mb-1">Kategori Adı</label>
-                                <input asp-for="CategoryName" type="text" class="form-control">
+                                <label asp-for="ProductName" class="control-label mb-1">Urun Adı</label>
+                                <input asp-for="ProductName" type="text" class="form-control">
                             </div>
                             <div class="form-group has-success">
-                                <label asp-for="Description" class="control-label mb-1">Kategori Açıklaması</label>
-                                <input asp-for="Description" type="text" class="form-control">
+                                <label asp-for="UnitPrice" class="control-label mb-1">Birim Fiyatı</label>
+                                <input asp-for="UnitPrice" type="text" class="form-control">
+
+                            </div>
+                            <div class="form-group has-success">
+                                <label asp-for="Stock" class="control-label mb-1">Stok Adedi</label>
+                                <input asp-for="Stock" type="text" class="form-control">
+
+                            </div>
+                            <div class="form-group has-success">
+                                <label asp-for="ExpireDate" class="control-label mb-1">Son Kullanma Tarihi</label>
+                                <input asp-for="ExpireDate" type="date" class="form-control">
+
+                            </div>
+                            <div class="form-group has-success">
+                                <label asp-for="CategoryID" class="control-label mb-1">Kategori</label>
+
+                                <select asp-for="CategoryID" asp-items="@ViewBag.AktifKategoriler" class="form-control">
+                                    <option>Lütfen Kategori Seçiniz...</option>
+                                </select>
+
+                            </div>
+                            <div class="form-group has-success">
+                                <label asp-for="SupplierID" class="control-label mb-1">Tedarikçi</label>
+                                <select asp-for="SupplierID" asp-items="@ViewBag.AktifTedarikciler" class="form-control">
+                                    <option>Lütfen Tedarikçi Seçiniz...</option>
+                                </select>
 
                             </div>
 
@@ -31,8 +55,8 @@
                             <div>
                                 <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
                                     <i class="fa fa-plus-square-o fa-lg"></i>&nbsp;
-                                    <span id="payment-button-amount">Kategori Güncelle</span>
-                                    <span id="payment-button-sending" style="display:none;">Ekleniyor…</span>
+                                    <span id="payment-button-amount">Urun Guncelle</span>
+                                    <span id="payment-button-sending" style="display:none;">Guncelleniyor…</span>
                                 </button>
                             </div>
                         </form>
@@ -40,8 +64,9 @@
                 </div>
 
             </div>
-        </div> 
+        </div>
 
     </div>
 
 </div>
+
