@@ -4,10 +4,10 @@ using StokKontrolProject.Entities.Entities;
 using System.Net.Http;
 using System.Text;
 
-namespace StokKontrolProject.UI.Areas.Admin.Controllers
+namespace StokKontrolProject.UI.Areas.UserArea.Controllers
 {
 
-    [Area("Admin")]
+    [Area("UserArea")]
     public class OrderController : Controller
     {
 
