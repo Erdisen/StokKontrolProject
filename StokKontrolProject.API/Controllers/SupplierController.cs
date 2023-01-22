@@ -38,7 +38,7 @@ namespace StokKontrolProject.API.Controllers
         }
         // POST: api/Supplier/TedarikcileriEkle
         [HttpPost]
-        public IActionResult TedarikcileriEkle(Supplier supplier)
+        public IActionResult TedarikciEkle(Supplier supplier)
         {
             _service.Add(supplier);
 

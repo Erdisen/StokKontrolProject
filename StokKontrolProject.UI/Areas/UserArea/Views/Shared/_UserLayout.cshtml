@@ -85,46 +85,27 @@
                         <a asp-controller="Home" asp-action="Index"><i class="menu-icon fa fa-laptop"></i>Anasayfa </a>
                     </li>
                     <li class="menu-title">Operasyonlar</li><!-- /.menu-title -->
-                    <li class="menu-item-has-children dropdown">
-                        <!--Kullanıcılar-->
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Kullanıcılar</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a asp-controller="User" asp-action="Index">Kullanıcıları Listele</a></li>
-                            <li><i class="fa fa-id-badge"></i><a asp-controller="User" asp-action="KullaniciEkle">Kullanıcı Ekle</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children dropdown">
+
                         <!--Ürünler-->
+                    <li class="menu-item-has-children dropdown">
+                    
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Ürünler</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-puzzle-piece"></i><a asp-controller="Product" asp-action="Index">Ürünleri Listele</a></li>
-                            <li><i class="fa fa-id-badge"></i><a asp-controller="Product" asp-action="UrunEkle">Ürün Ekle</a></li>
                         </ul>
                     </li>
+
+
+                    <!--Siparişler-->
                     <li class="menu-item-has-children dropdown">
-                        <!--Kategoriler-->
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Kategoriler</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a asp-controller="Category" asp-action="Index">Kategori Listele</a></li>
-                            <li><i class="fa fa-id-badge"></i><a asp-controller="Category" asp-action="KategoriEkle">Kategori Ekle</a></li>
-                        </ul>
-                    </li>
-                    <li class="menu-item-has-children dropdown">
-                        <!--Siparişler-->
+                       
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Siparişler</a>
                         <ul class="sub-menu children dropdown-menu">
                             <li><i class="fa fa-puzzle-piece"></i><a asp-controller="Order" asp-action="Index">Sipariş Listele</a></li>
                             
                         </ul>
                     </li>
-                    <li class="menu-item-has-children dropdown">
-                        <!--Tedarikçiler-->
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="menu-icon fa fa-cogs"></i>Tedarikçiler</a>
-                        <ul class="sub-menu children dropdown-menu">
-                            <li><i class="fa fa-puzzle-piece"></i><a asp-controller="Supplier" asp-action="Index">Tedarikçi Listele</a></li>
-                            <li><i class="fa fa-id-badge"></i><a asp-controller="Supplier" asp-action="TedarikciEkle">Tedarikçi Ekle</a></li>
-                        </ul>
-                    </li>
+                    
 
             </div><!-- /.navbar-collapse -->
         </nav>
